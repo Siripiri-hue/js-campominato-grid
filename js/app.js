@@ -24,4 +24,13 @@ for (let i = 0; i < totalCells ; i++)
     //prendo il numero dall'array e lo scrivo all'interno del quadratino
     let temp = numbers[i];
     square.append(temp);
+
+    // aggiungo colore azzurro al click dei quadratini
+    square.addEventListener('click', function()
+    {
+        square.style.backgroundColor = '#7f7fff';
+        console.log("I'm working");
+    });
 }
+
+
