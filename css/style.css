@@ -35,7 +35,7 @@
 }
 
 .square {
-    width: calc(100% / 10);
+    /* width: calc(100% / 10); */
     aspect-ratio: 1;
     border: 1px solid black;
     cursor: pointer;
@@ -45,9 +45,9 @@
     align-items: center;
 }
 
-.blue-bg {
+/* .blue-bg {
     background-color: #7f7fff;
-}
+} */
 
 /* footer */
 footer {

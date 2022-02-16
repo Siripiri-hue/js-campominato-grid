@@ -1,8 +1,10 @@
+// easy
+// const row = 10; //imposto il num delle righe della griglia
+// const column = 10; //imposto il num delle colonne della griglia
+
 function createGrid (row, column) //creo funzione per creare la griglia al click del btn
 {
-    // easy
-    // const row = 10; //imposto il num delle righe della griglia
-    // const column = 10; //imposto il num delle colonne della griglia
+    
     const numbers = []; //inizializzo un array vuoto che contenga i numeri da aggiungere alla griglia
     const totalCells = row * column; //valore che indica quanto deve essere grande la griglia
 
@@ -12,8 +14,9 @@ function createGrid (row, column) //creo funzione per creare la griglia al click
         numbers.push(i+1);
     }
 
-    //seleziono l'elemento grid dall'html
-    const grid = document.querySelector("#grid"); 
+    //seleziono l'elemento grid dall'html ed eventualmente lo "pulisco"
+    const grid = document.querySelector("#grid");
+    grid.innerHTML = "";
 
     //creo tanti quadrati quante devono essere le celle totali
     for (let i = 0; i < totalCells ; i++) 
@@ -21,6 +24,7 @@ function createGrid (row, column) //creo funzione per creare la griglia al click
         //creo un quadratino, gli assegno la classe square e lo "appendo" alla griglia
         const square = document.createElement("div"); 
         square.classList.add("square"); 
+        square.setAttribute("style", `width: calc(100% / ${row}`);
         grid.appendChild(square); 
 
         //prendo il numero dall'array e lo scrivo all'interno del quadratino
@@ -47,11 +51,14 @@ btn.addEventListener('click', function()
     {
         case "easy":
             createGrid(10, 10);
+            // window.location.reload();
             break;
         case "hard":
+            // window.location.reload();
             createGrid(9, 9);
             break;
         case "crazy":
+            // window.location.reload();
             createGrid(7, 7);
             break;
     }
